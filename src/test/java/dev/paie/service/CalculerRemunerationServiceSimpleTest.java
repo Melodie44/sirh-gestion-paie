@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -25,12 +24,11 @@ public class CalculerRemunerationServiceSimpleTest {
 	private CalculerRemunerationService remunerationService;
 	
 	@Autowired
-	@Qualifier("bulletin1")
 	private BulletinSalaire bulletin;
 
 	@Test
 	public void test_calculer() {
-		// TODO remplacer null par un objet bulletin
+		
 		ResultatCalculRemuneration resultat = remunerationService.calculer(bulletin);
 		assertThat(resultat.getSalaireBrut()).isEqualTo("2683.30");
 		assertThat(resultat.getTotalRetenueSalarial()).isEqualTo("517.08");
