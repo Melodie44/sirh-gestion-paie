@@ -37,6 +37,8 @@ public class AvantageRepositoryTest {
 		a.setCode("AV01");
 		a.setMontant(new BigDecimal("100"));
 		a.setNom("Avantage 1");
+		avantageRepository.save(a2);
 	// TODO vérifier que les modifications sont bien prises en compte via la méthode findOne
+		avantageRepository.findOne(1);
 	}
 }
