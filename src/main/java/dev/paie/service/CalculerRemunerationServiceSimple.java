@@ -15,23 +15,25 @@ import dev.paie.util.PaieUtils;
 @Service
 public class CalculerRemunerationServiceSimple implements CalculerRemunerationService{
 	
+	@Autowired
 	private PaieUtils paieUtils;
 	
+	@Autowired
 	private ResultatCalculRemuneration res;
 	
 	@Override
 	public ResultatCalculRemuneration calculer(BulletinSalaire bulletin) {
 		
-		BigDecimal heuresBase = new BigDecimal(bulletin.getRemunerationEmploye().getGrade().getNbHeuresBase().toString());
-		BigDecimal tauxBase = new BigDecimal(bulletin.getRemunerationEmploye().getGrade().getTauxBase().toString());
-		BigDecimal salaireBase = new BigDecimal(heuresBase.toString()).multiply(new BigDecimal(tauxBase.toString()));
-		BigDecimal salaireBrut = salaireBase.add(new BigDecimal(bulletin.getPrimeExceptionnelle().toString()));
+		BigDecimal heuresBase = bulletin.getRemunerationEmploye().getGrade().getNbHeuresBase();
+		BigDecimal tauxBase = bulletin.getRemunerationEmploye().getGrade().getTauxBase();
+		BigDecimal salaireBase = heuresBase.multiply(tauxBase);
+		BigDecimal salaireBrut = salaireBase.add(bulletin.getPrimeExceptionnelle());
 		BigDecimal totRetSal = new BigDecimal("0");
 		List<Cotisation> lstCotNonSal = bulletin.getRemunerationEmploye().getProfilRemuneration().getCotisationsNonImposables();
 		for(Cotisation cot : lstCotNonSal) {
 			
 			if(cot.getTauxSalarial() != null) {
-				totRetSal = totRetSal.add(new BigDecimal(cot.getTauxSalarial().toString()).multiply(new BigDecimal(salaireBrut.toString())));
+				totRetSal = totRetSal.add(cot.getTauxSalarial().multiply(salaireBrut));
 			}
 		}
 		BigDecimal totCotPat = new BigDecimal("0");
@@ -39,18 +41,18 @@ public class CalculerRemunerationServiceSimple implements CalculerRemunerationSe
 		for(Cotisation cot : lstCotNonPat) {
 			
 			if(cot.getTauxPatronal() != null) {
-				totCotPat = totCotPat.add(new BigDecimal(cot.getTauxPatronal().toString()).multiply(new BigDecimal(salaireBrut.toString())));
+				totCotPat = totCotPat.add(cot.getTauxPatronal().multiply(salaireBrut));
 			}
 		}
 		
-		BigDecimal netImp = salaireBrut.subtract(new BigDecimal(totRetSal.toString()));
+		BigDecimal netImp = salaireBrut.subtract(totRetSal);
 		
 		BigDecimal somme = new BigDecimal("0");
 		List<Cotisation> lstCotImpSal = bulletin.getRemunerationEmploye().getProfilRemuneration().getCotisationsImposables();
 		for(Cotisation cot : lstCotImpSal) {
 			
 			if(cot.getTauxSalarial() != null) {
-				somme = somme.add(new BigDecimal(cot.getTauxSalarial().toString()).multiply(new BigDecimal(salaireBrut.toString())));
+				somme = somme.add(cot.getTauxSalarial().multiply(salaireBrut));
 			}
 		}
 		BigDecimal netAPayer = netImp.subtract(somme);

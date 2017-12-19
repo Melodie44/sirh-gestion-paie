@@ -33,7 +33,7 @@ public class CalculerRemunerationServiceSimpleTest {
 		assertThat(resultat.getSalaireBrut()).isEqualTo("2683.30");
 		assertThat(resultat.getTotalRetenueSalarial()).isEqualTo("517.08");
 		assertThat(resultat.getTotalCotisationsPatronales()).isEqualTo("1096.13");
-		assertThat(resultat.getNetImposable()).isEqualTo("2166.22");
+		assertThat(resultat.getNetImposable()).isEqualTo("2166.23");
 		assertThat(resultat.getNetAPayer()).isEqualTo("2088.41");
 	}
 }

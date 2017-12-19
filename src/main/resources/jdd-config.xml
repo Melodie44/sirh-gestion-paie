@@ -5,6 +5,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 	
+	<bean id="resultatCalculRemuneration" class="dev.paie.entite.ResultatCalculRemuneration"></bean>
+	
 	<bean id="entreprise" class="dev.paie.entite.Entreprise">
 		<property name="siret" value="80966785000022"></property>
 		<property name="denomination" value="Dev Entreprise"></property>
