@@ -34,6 +34,9 @@ public class Grade {
 		this.id = id;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Grade [id=" + id + ", code=" + code + ", nbHeuresBase=" + nbHeuresBase + ", tauxBase=" + tauxBase + "]";
+	}
 
 }

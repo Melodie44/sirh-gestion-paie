@@ -1,0 +1,106 @@
+11:49:07.395 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				1
+11:56:15.301 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				1
+11:59:34.291 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				1
+12:06:53.519 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				1
+12:10:38.609 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				1
+12:10:38.625 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				code : 
+12:10:38.625 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				151.67
+12:10:38.625 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				11.10
+12:22:34.028 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				1
+12:22:34.042 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				code : 
+12:22:34.042 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				151.67
+12:22:34.043 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				11.10
+12:30:59.062 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				1
+12:30:59.068 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				DEVJU
+12:30:59.069 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				151.67
+12:30:59.069 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				11.10
+12:30:59.116 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				grade 1 mis à jour
+12:31:39.025 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				1
+12:31:39.037 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				DEVJU
+12:31:39.037 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				151.67
+12:31:39.037 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				11.10
+12:31:39.069 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				grade 1 mis à jour
+12:31:39.116 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=1, code=DEVJU, nbHeuresBase=151.67, tauxBase=11.10]
+12:34:10.241 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				grade 1 mis à jour
+12:34:39.564 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=2, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:34:39.574 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				grade 1 mis à jour
+12:34:39.574 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=2, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:35:04.086 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=2, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:35:04.088 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=3, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:35:04.089 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				grade 1 mis à jour
+12:35:04.089 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=2, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:35:04.089 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=3, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:35:58.269 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=1, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:35:58.282 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=4, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:35:58.315 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				grade 1 mis à jour
+12:35:58.315 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=1, code=DEVJU, nbHeuresBase=151.67, tauxBase=11.10]
+12:35:58.330 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=4, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:36:30.849 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=1, code=DEVJU, nbHeuresBase=151.67, tauxBase=11.10]
+12:36:30.853 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=4, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:36:30.853 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=5, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:36:30.869 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				grade 1 mis à jour
+12:36:30.885 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=1, code=DEVJU, nbHeuresBase=151.67, tauxBase=11.10]
+12:36:30.885 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=4, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:36:30.885 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=5, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:37:48.388 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=1, code=DEVJU, nbHeuresBase=151.67, tauxBase=11.10]
+12:37:48.430 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				grade 1 mis à jour
+12:37:48.446 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=1, code=DEVJU, nbHeuresBase=151.67, tauxBase=11.10]
+12:38:14.366 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=6, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:38:14.378 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				grade 1 mis à jour
+12:38:14.378 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=6, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:39:19.893 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=1, code=null, nbHeuresBase=151.67, tauxBase=11.10]
+12:39:19.947 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				grade 1 mis à jour
+12:39:19.947 [main] INFO  d.p.s.GradeServiceJdbcTemplateTest -
+				Grade [id=1, code=DEVJU, nbHeuresBase=151.67, tauxBase=11.10]
