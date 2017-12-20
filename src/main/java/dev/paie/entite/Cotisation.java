@@ -7,8 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -31,9 +30,11 @@ public class Cotisation {
 	@Column(name="TAUX_PATRONAL")
 	private BigDecimal tauxPatronal;
 	
-	@ManyToOne
-	@JoinColumn(name="ID_PROF_REM")
-	private ProfilRemuneration profilRemuneration;
+	@ManyToMany(mappedBy="cotisationsImposables")
+	private ProfilRemuneration profilRemunerationImp;
+	
+	@ManyToMany(mappedBy="cotisationsNonImposables")
+	private ProfilRemuneration profilRemunerationNonImp;
 	
 	public String getCode() {
 		return code;
