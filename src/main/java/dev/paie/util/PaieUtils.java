@@ -1,3 +1,4 @@
+
 package dev.paie.util;
 
 import java.math.BigDecimal;

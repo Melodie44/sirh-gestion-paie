@@ -16,8 +16,8 @@
 				%msg%n</pattern>
 		</encoder>
 	</appender>
-	<!-- politique de log pour les classes du package ihm -->
-	<logger name="dev.paie.service" level="INFO">
+	<!-- politique de log pour les classes du package dev.paie.service -->
+	<logger name="dev.paie" level="INFO">
 		<appender-ref ref="STDOUT" />
 	</logger>
 

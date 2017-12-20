@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,12 +18,19 @@ public class Avantage {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 	@Column(name="CODE")
 	private String code;
+	
 	@Column(name="NOM")
 	private String nom;
+	
 	@Column(name="MONTANT")
 	private BigDecimal montant;
+	
+	@ManyToOne
+	@JoinColumn(name="ID_PROF_REM")
+	private ProfilRemuneration profilRemuneration;
 
 	public String getCode() {
 		return code;
@@ -53,5 +62,10 @@ public class Avantage {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	@Override
+	public String toString() {
+		return "Avantage [id=" + id + ", code=" + code + ", nom=" + nom + ", montant=" + montant + "]";
 	}
 }

@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,13 +21,19 @@ public class Cotisation {
 	
 	@Column(name="CODE")
 	private String code;
+	
 	@Column(name="LIBELLE")
 	private String libelle;
+	
 	@Column(name="TAUX_SALARIAL")
 	private BigDecimal tauxSalarial;
+	
 	@Column(name="TAUX_PATRONAL")
 	private BigDecimal tauxPatronal;
 	
+	@ManyToOne
+	@JoinColumn(name="ID_PROF_REM")
+	private ProfilRemuneration profilRemuneration;
 	
 	public String getCode() {
 		return code;
@@ -61,8 +69,8 @@ public class Cotisation {
 	
 	@Override
 	public String toString() {
-		return "Cotisation [id=" + id + ", code=" + code + ", libelle=" + libelle + ", tauxSalarial=" + tauxSalarial
-				+ ", tauxPatronal=" + tauxPatronal + "]";
+		return "Cotisation " + code + ", libelle=" + libelle + ", tauxSalarial=" + tauxSalarial
+				+ ", tauxPatronal=" + tauxPatronal ;
 	}
 	
 }

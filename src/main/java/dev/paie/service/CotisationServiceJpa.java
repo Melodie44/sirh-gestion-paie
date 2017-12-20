@@ -21,8 +21,14 @@ public class CotisationServiceJpa implements CotisationService{
 	@Override
 	public void sauvegarder(Cotisation nouvelleCotisation) {
 		
-		em.persist(nouvelleCotisation);
 		
+		if(lister().contains(nouvelleCotisation)) {
+			System.out.println("La cotisation existe déjà");
+		}else {
+			em.persist(nouvelleCotisation);
+			
+		}
+
 	}
 
 	@Override
@@ -45,5 +51,18 @@ public class CotisationServiceJpa implements CotisationService{
 		TypedQuery<Cotisation> query = em.createQuery("SELECT c FROM Cotisation c", Cotisation.class);
 		
 		return query.getResultList();
+	}
+	
+	@Override
+	public void supprimer(String code) {
+		
+		Cotisation cot = (Cotisation) lister().stream().filter(c -> c.getCode() == code);
+		
+		if(cot == null) {
+			System.out.println("La cotisation à supprimer n'existe pas");
+		}else {
+			em.remove(cot);
+			
+		}
 	}
 }
