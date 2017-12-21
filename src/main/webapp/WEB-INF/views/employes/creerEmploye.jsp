@@ -17,34 +17,28 @@
 		</div>
 		<h1>Ajouter un Employé</h1>
 		<p>Préfixe Matricule : ${prefixMatricule}</p>
-		<form:form method="post" modelAttribut="employe">
+		<form:form method="post" commandName="employe">
 			<div class="form-group">
 				<label for="Matricule">Matricule</label> 
-				<input id="matricule" type="text" class="form-control" name="matricule">
+				<form:input path="matricule" class="form-control"/>
 			</div>
 			<div class="form-group">
 				<label for="Entreprise">Entreprise</label> 
-				<form:select path="entreprise" id="entreprise">
-					<c:forEach items="${entreprises}" var="entreprise">
-						<form:option value="${entreprise.denomination}" label="${entreprise.denomination}"/>
-					</c:forEach>
+				<form:select path="entreprise" class="form-control">
+					<form:options items="${entreprises}" itemValue="id" itemLabel="denomination"/>
 				</form:select>
 			</div>
 			<div class="form-group">
-				<label for="Entreprise">Profil</label> 
-				<select class="form-control" id="profil">
-					<c:forEach items="${profilsRemu}"  var="profilRemu">
-						<option>${profilRemu.code}</option>
-					</c:forEach>
-  				</select>
+				<label for="Profil">Profil</label> 
+				<form:select path="profilRemuneration" class="form-control">
+					<form:options items="${profilsRemu}" itemValue="id" itemLabel="code"/>
+				</form:select>
 			</div>
 			<div class="form-group">
-				<label for="Entreprise">Grade</label> 
-				<select class="form-control" id="grade">
-					<c:forEach items="${grades}"  var="grade">
-						<option>${grade.code}</option>
-					</c:forEach>
-  				</select>
+				<label for="Grade">Grade</label> 
+				<form:select path="grade" class="form-control">
+					<form:options items="${grades}" itemValue="id" itemLabel="code"/>
+				</form:select>
 			</div>
 			<button type="submit" class="btn btn-default">Ajouter</button>
 		</form:form>

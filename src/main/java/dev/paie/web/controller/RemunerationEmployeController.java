@@ -56,8 +56,13 @@ public class RemunerationEmployeController {
 		return mv;
 	}
 	
-	@RequestMapping(method = RequestMethod.POST)
-	public void submitForm(@ModelAttribute("employe") RemunerationEmploye employe) {
+	@RequestMapping(method = RequestMethod.POST, path = "/creer")
+	public String post(@ModelAttribute RemunerationEmploye employe) {
+		
+		
+		
 		remuEmployeRepository.save(employe);
+		
+		return "success";
 	}
 }
