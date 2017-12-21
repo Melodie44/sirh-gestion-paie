@@ -30,11 +30,11 @@ public class Cotisation {
 	@Column(name="TAUX_PATRONAL")
 	private BigDecimal tauxPatronal;
 	
-	@ManyToMany(mappedBy="cotisationsImposables")
+	/*@ManyToMany(mappedBy="cotisationsImposables")
 	private ProfilRemuneration profilRemunerationImp;
 	
 	@ManyToMany(mappedBy="cotisationsNonImposables")
-	private ProfilRemuneration profilRemunerationNonImp;
+	private ProfilRemuneration profilRemunerationNonImp;*/
 	
 	public String getCode() {
 		return code;

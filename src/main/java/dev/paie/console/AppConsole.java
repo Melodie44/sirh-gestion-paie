@@ -32,7 +32,7 @@ public class AppConsole {
 
 	public static void main(String[] args) {
 		
-		context = new AnnotationConfigApplicationContext(ServicesConfig.class);
+		/*context = new AnnotationConfigApplicationContext(ServicesConfig.class);
 		
 		paieUtils = context.getBean(PaieUtils.class);
 		
@@ -86,7 +86,7 @@ public class AppConsole {
 				
 				cotisationService.supprimer(code);
 			}
-		}
+		}*/
 	}
 
 }

@@ -11,7 +11,7 @@ import dev.paie.spring.DataSourceMySQLConfig;
 @Configuration
 @ComponentScan({"dev.paie.service", "dev.paie.util", "dev.paie.console"})
 @Import({JpaConfig.class, DataSourceMySQLConfig.class})
-@ImportResource({"classpath:entreprises.xml", "classpath:grades.xml", "classpath:profils-remuneration.xml"})
+@ImportResource({"classpath:jdd-config.xml"})
 @EnableJpaRepositories("dev.paie.repository")
 public class ServicesConfig {
 
