@@ -1,5 +1,8 @@
 package dev.paie.web.controller;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,18 +54,38 @@ public class RemunerationEmployeController {
 		RemunerationEmploye remuEmploye = new RemunerationEmploye();
 		mv.addObject("employe", remuEmploye);
 		
-		mv.addObject("prefixMatricule", "M00");
+		mv.addObject("prefixMatricule", "M");
 		
 		return mv;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, path = "/creer")
-	public String post(@ModelAttribute RemunerationEmploye employe) {
+	public ModelAndView post(@ModelAttribute("employe") RemunerationEmploye employe){
 		
-		
+		employe.setDateHeureCreation(LocalDateTime.now());
 		
 		remuEmployeRepository.save(employe);
 		
-		return "success";
+		return creerEmploye();
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, path = "/lister")
+	public ModelAndView listerEmployes() {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("employes/listerEmployes");
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		List<String> dates = new ArrayList<String>();
+		
+		List<RemunerationEmploye> remusEmployes = remuEmployeRepository.findAll();
+		for(RemunerationEmploye employe : remusEmployes) {
+			
+			dates.add(employe.getDateHeureCreation().format(formatter));
+		}
+		mv.addObject("remusEmployes", remusEmployes);
+		mv.addObject("dates", dates);
+		
+		return mv;
 	}
 }
