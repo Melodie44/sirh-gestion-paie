@@ -1,6 +1,7 @@
 package dev.paie.entite;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -70,8 +71,9 @@ public class RemunerationEmploye {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public LocalDateTime getDateHeureCreation() {
-		return dateHeureCreation;
+	public String getDateHeureCreation() {	
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		return dateHeureCreation.format(formatter);
 	}
 	public void setDateHeureCreation(LocalDateTime dateHeureCreation) {
 		this.dateHeureCreation = dateHeureCreation;

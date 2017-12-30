@@ -1,8 +1,6 @@
 package dev.paie.web.controller;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,17 +72,9 @@ public class RemunerationEmployeController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("employes/listerEmployes");
-		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-		List<String> dates = new ArrayList<String>();
-		
+	
 		List<RemunerationEmploye> remusEmployes = remuEmployeRepository.findAll();
-		for(RemunerationEmploye employe : remusEmployes) {
-			
-			dates.add(employe.getDateHeureCreation().format(formatter));
-		}
 		mv.addObject("remusEmployes", remusEmployes);
-		mv.addObject("dates", dates);
 		
 		return mv;
 	}

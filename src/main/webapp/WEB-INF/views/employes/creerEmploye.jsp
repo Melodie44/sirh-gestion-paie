@@ -12,8 +12,8 @@
 <body>
 	<div class="container">
 		<div>
-			<a href="<c:url value="/mvc/employes/lister"/>">Employés</a>
-			<a href="<c:url value="/mvc/bulletins/creer"/>">Bulletins</a>
+			<a href="<c:url value='lister'/>">Employés</a>
+			<a href="<c:url value="/mvc/bulletins/lister"/>">Bulletins</a>
 		</div>
 		<h1>Ajouter un Employé</h1>
 		<p>Préfixe Matricule : ${prefixMatricule}</p>

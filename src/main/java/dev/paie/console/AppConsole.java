@@ -1,18 +1,12 @@
 package dev.paie.console;
 
-import java.math.BigDecimal;
 import java.util.Scanner;
 
-import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import dev.paie.config.ServicesConfig;
-import dev.paie.entite.Cotisation;
 import dev.paie.service.CotisationService;
 import dev.paie.util.PaieUtils;
 

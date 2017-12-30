@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -29,12 +28,6 @@ public class Cotisation {
 	
 	@Column(name="TAUX_PATRONAL")
 	private BigDecimal tauxPatronal;
-	
-	/*@ManyToMany(mappedBy="cotisationsImposables")
-	private ProfilRemuneration profilRemunerationImp;
-	
-	@ManyToMany(mappedBy="cotisationsNonImposables")
-	private ProfilRemuneration profilRemunerationNonImp;*/
 	
 	public String getCode() {
 		return code;

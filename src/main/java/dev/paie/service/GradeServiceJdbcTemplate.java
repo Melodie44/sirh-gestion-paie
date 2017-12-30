@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import dev.paie.entite.Grade;
-import dev.paie.spring.DataSourceMySQLConfig;
 import dev.paie.util.PaieUtils;
 
 @Service
@@ -20,9 +19,6 @@ public class GradeServiceJdbcTemplate implements GradeService {
 	
 	@Autowired
 	private PaieUtils paieUtils;
-	
-	@Autowired
-	private DataSourceMySQLConfig dataSource;
 
 	@Autowired
 	public GradeServiceJdbcTemplate(DataSource dataSource) {

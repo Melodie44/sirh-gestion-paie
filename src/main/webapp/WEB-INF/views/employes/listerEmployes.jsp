@@ -28,7 +28,7 @@
 				<tbody>
 					<c:forEach items="${remusEmployes}" var="remuEmploye">
 						<tr>
-							<td>${dates[remuEmploye.id-1]}</td>
+							<td>${remuEmploye.dateHeureCreation}</td>
 							<td>${remuEmploye.matricule}</td>
 							<td>${remuEmploye.grade.code}</td>
 						</tr>

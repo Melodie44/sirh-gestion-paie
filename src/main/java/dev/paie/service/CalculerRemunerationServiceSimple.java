@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import dev.paie.entite.BulletinSalaire;
@@ -67,5 +66,4 @@ public class CalculerRemunerationServiceSimple implements CalculerRemunerationSe
 		return res;
 
 	}
-
 }
