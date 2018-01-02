@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import dev.paie.entite.BulletinSalaire;
 import dev.paie.entite.Periode;
 import dev.paie.entite.RemunerationEmploye;
 import dev.paie.entite.ResultatCalculRemuneration;
+import dev.paie.entite.Utilisateur;
 import dev.paie.repository.BulletinSalaireRepository;
 import dev.paie.repository.PeriodeRepository;
 import dev.paie.repository.RemunerationEmployeRepository;
@@ -38,6 +40,7 @@ public class BulletinController {
 	private CalculerRemunerationServiceSimple calculerRemService;
 
 	@RequestMapping(method = RequestMethod.GET, path = "/creer")
+	@Secured("ROLE_ADMINISTRATEUR")
 	public ModelAndView creerBulletin() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("bulletins/creerBulletin");
@@ -55,6 +58,7 @@ public class BulletinController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, path = "/creer")
+	@Secured("ROLE_ADMINISTRATEUR")
 	public ModelAndView post(@ModelAttribute("bulletin") BulletinSalaire bulletin){
 		
 		bulletin.setDateHeureCreation(LocalDateTime.now());
@@ -65,6 +69,7 @@ public class BulletinController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/lister")
+	@Secured({"ROLE_UTILISATEUR", "ROLE_ADMINISTRATEUR"})
 	public ModelAndView listerBulletins() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("bulletins/listerBulletins");
@@ -82,6 +87,7 @@ public class BulletinController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/visualiser/{bulletinId}")
+	@Secured({"ROLE_UTILISATEUR", "ROLE_ADMINISTRATEUR"})
 	public ModelAndView visualiserBulletin(@PathVariable int bulletinId) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("bulletins/visualiserBulletin");
